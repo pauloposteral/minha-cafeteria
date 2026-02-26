@@ -11,8 +11,8 @@ interface ProgressBarProps {
 export default function ProgressBar({
   value,
   max,
-  color = 'bg-amber-500',
-  bgColor = 'bg-stone-800',
+  color = 'bg-cafe-300',
+  bgColor = 'bg-cafe-200/50',
   height = 'h-2',
   showLabel = false,
   animated = true,
@@ -28,7 +28,7 @@ export default function ProgressBar({
         />
       </div>
       {showLabel && (
-        <p className="text-xs text-stone-400 mt-0.5 text-right">
+        <p className="text-xs text-cafe-500 mt-0.5 text-right">
           {Math.floor(percent)}%
         </p>
       )}

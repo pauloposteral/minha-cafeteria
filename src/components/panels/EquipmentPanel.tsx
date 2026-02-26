@@ -7,10 +7,10 @@ export default function EquipmentPanel() {
   const { state, dispatch } = useGame();
 
   return (
-    <div className="flex flex-col h-full bg-stone-950">
-      <div className="p-3 border-b border-stone-800">
-        <h2 className="text-amber-100 font-bold">Equipamentos</h2>
-        <p className="text-xs text-stone-500 mt-0.5">
+    <div className="flex flex-col h-full bg-cafe-50">
+      <div className="p-3 border-b border-cafe-200">
+        <h2 className="text-cafe-800 font-bold font-display">Equipamentos</h2>
+        <p className="text-xs text-cafe-500 mt-0.5">
           Maquinas habilitam novos drinks e aumentam eficiencia
         </p>
       </div>
@@ -29,35 +29,35 @@ export default function EquipmentPanel() {
               key={machine.id}
               className={`rounded-xl border p-3 transition-all ${
                 !isUnlocked
-                  ? 'bg-stone-900/30 border-stone-800/40 opacity-50'
+                  ? 'bg-cafe-100/40 border-cafe-200/50 opacity-50'
                   : isOwned
-                    ? 'bg-stone-800/60 border-amber-800/30'
-                    : 'bg-stone-800/40 border-stone-700/30'
+                    ? 'bg-white border-cafe-300/50 shadow-sm'
+                    : 'bg-white/60 border-cafe-200'
               }`}
             >
               <div className="flex items-start gap-3">
-                <div className="text-2xl w-10 h-10 flex items-center justify-center bg-stone-900/60 rounded-lg">
+                <div className="text-2xl w-10 h-10 flex items-center justify-center bg-cafe-100 rounded-lg">
                   {machine.icon}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-amber-100 font-medium text-sm">{machine.name}</span>
+                    <span className="text-cafe-800 font-medium text-sm">{machine.name}</span>
                     {isOwned && (
-                      <span className="text-[9px] bg-green-900/50 text-green-400 px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
+                      <span className="text-[9px] bg-green-50 text-green-600 px-1.5 py-0.5 rounded-full flex items-center gap-0.5 border border-green-200">
                         <Check size={8} /> Nv.{owned.level}
                       </span>
                     )}
-                    {!isUnlocked && <Lock size={12} className="text-stone-500" />}
+                    {!isUnlocked && <Lock size={12} className="text-cafe-400" />}
                   </div>
-                  <p className="text-xs text-stone-400 mt-0.5 leading-relaxed">{machine.description}</p>
+                  <p className="text-xs text-cafe-500 mt-0.5 leading-relaxed">{machine.description}</p>
 
-                  <div className="flex items-center gap-3 mt-2 text-xs text-stone-500">
+                  <div className="flex items-center gap-3 mt-2 text-xs text-cafe-500">
                     <span className="flex items-center gap-0.5">
-                      <Zap size={10} className="text-amber-500" />
+                      <Zap size={10} className="text-cafe-400" />
                       +{Math.round(machine.speedBonus * 100)}% velocidade
                     </span>
                     <span className="flex items-center gap-0.5">
-                      <Sparkles size={10} className="text-amber-500" />
+                      <Sparkles size={10} className="text-cafe-400" />
                       +{Math.round(machine.qualityBonus * 100)}% qualidade
                     </span>
                   </div>
@@ -66,7 +66,7 @@ export default function EquipmentPanel() {
 
               <div className="mt-3 flex gap-2">
                 {!isUnlocked && (
-                  <div className="text-xs text-stone-600">
+                  <div className="text-xs text-cafe-400">
                     Requer nivel {machine.unlockLevel}
                   </div>
                 )}
@@ -77,8 +77,8 @@ export default function EquipmentPanel() {
                     disabled={!canBuy}
                     className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
                       canBuy
-                        ? 'bg-amber-600 text-stone-950 hover:bg-amber-500 active:scale-95'
-                        : 'bg-stone-800 text-stone-600 cursor-not-allowed'
+                        ? 'bg-cafe-500 text-white hover:bg-cafe-600 active:scale-95'
+                        : 'bg-cafe-200 text-cafe-400 cursor-not-allowed'
                     }`}
                   >
                     Comprar {formatMoney(machine.cost)}
@@ -91,8 +91,8 @@ export default function EquipmentPanel() {
                     disabled={!canUpgrade}
                     className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold transition-all ${
                       canUpgrade
-                        ? 'bg-amber-600/20 text-amber-400 border border-amber-700/50 hover:bg-amber-600/30 active:scale-95'
-                        : 'bg-stone-800 text-stone-600 border border-stone-700/30 cursor-not-allowed'
+                        ? 'bg-cafe-300/20 text-cafe-600 border border-cafe-300/50 hover:bg-cafe-300/30 active:scale-95'
+                        : 'bg-cafe-200 text-cafe-400 border border-cafe-200 cursor-not-allowed'
                     }`}
                   >
                     <ChevronUp size={14} />
@@ -101,7 +101,7 @@ export default function EquipmentPanel() {
                 )}
 
                 {isOwned && owned.level >= machine.maxLevel && (
-                  <span className="text-xs text-amber-500 font-medium">Nivel Maximo!</span>
+                  <span className="text-xs text-cafe-400 font-medium">Nivel Maximo!</span>
                 )}
               </div>
             </div>

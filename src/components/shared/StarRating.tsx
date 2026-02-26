@@ -13,7 +13,7 @@ export default function StarRating({ value, max = 5, size = 14 }: StarRatingProp
         <Star
           key={i}
           size={size}
-          className={i < value ? 'text-amber-400 fill-amber-400' : 'text-stone-600'}
+          className={i < value ? 'text-cafe-400 fill-cafe-400' : 'text-cafe-200'}
         />
       ))}
     </div>

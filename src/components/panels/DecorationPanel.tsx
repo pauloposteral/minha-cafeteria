@@ -23,21 +23,21 @@ export default function DecorationPanel() {
   );
 
   return (
-    <div className="flex flex-col h-full bg-stone-950">
-      <div className="p-3 border-b border-stone-800">
+    <div className="flex flex-col h-full bg-cafe-50">
+      <div className="p-3 border-b border-cafe-200">
         <div className="flex items-center justify-between mb-2">
           <div>
-            <h2 className="text-amber-100 font-bold">Decoracao</h2>
-            <p className="text-xs text-stone-500 mt-0.5">
+            <h2 className="text-cafe-800 font-bold font-display">Decoracao</h2>
+            <p className="text-xs text-cafe-500 mt-0.5">
               Melhore o ambiente para mais gorjetas e paciencia
             </p>
           </div>
           <div className="text-right">
             <div className="flex items-center gap-1">
-              <span className="text-xs text-stone-400">Ambiente:</span>
+              <span className="text-xs text-cafe-500">Ambiente:</span>
               <StarRating value={state.ambienceStars} />
             </div>
-            <p className="text-[10px] text-stone-500">{state.ambienceScore} pontos</p>
+            <p className="text-[10px] text-cafe-400">{state.ambienceScore} pontos</p>
           </div>
         </div>
 
@@ -50,8 +50,8 @@ export default function DecorationPanel() {
                 onClick={() => setCategory(cat.id)}
                 className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
                   category === cat.id
-                    ? 'bg-amber-600 text-stone-950'
-                    : 'bg-stone-800 text-stone-400 hover:bg-stone-700'
+                    ? 'bg-cafe-500 text-white'
+                    : 'bg-cafe-100 text-cafe-600 hover:bg-cafe-200'
                 }`}
               >
                 <Icon size={12} />
@@ -76,29 +76,29 @@ export default function DecorationPanel() {
               key={deco.id}
               className={`rounded-xl border p-3 transition-all ${
                 !isUnlocked
-                  ? 'bg-stone-900/30 border-stone-800/40 opacity-50'
+                  ? 'bg-cafe-100/40 border-cafe-200/50 opacity-50'
                   : owned
-                    ? 'bg-stone-800/60 border-amber-800/30'
-                    : 'bg-stone-800/40 border-stone-700/30'
+                    ? 'bg-white border-cafe-300/50 shadow-sm'
+                    : 'bg-white/60 border-cafe-200'
               }`}
             >
               <div className="flex items-start gap-3">
-                <div className="text-2xl w-10 h-10 flex items-center justify-center bg-stone-900/60 rounded-lg">
+                <div className="text-2xl w-10 h-10 flex items-center justify-center bg-cafe-100 rounded-lg">
                   {deco.icon}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-amber-100 font-medium text-sm">{deco.name}</span>
+                    <span className="text-cafe-800 font-medium text-sm">{deco.name}</span>
                     {owned && (
-                      <span className="text-[9px] bg-green-900/50 text-green-400 px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
+                      <span className="text-[9px] bg-green-50 text-green-600 px-1.5 py-0.5 rounded-full flex items-center gap-0.5 border border-green-200">
                         <Check size={8} /> x{owned.count}
                       </span>
                     )}
-                    {!isUnlocked && <Lock size={12} className="text-stone-500" />}
+                    {!isUnlocked && <Lock size={12} className="text-cafe-400" />}
                   </div>
-                  <p className="text-xs text-stone-400 mt-0.5">{deco.description}</p>
-                  <div className="flex items-center gap-3 mt-1 text-xs text-stone-500">
-                    <span className="text-amber-500">+{deco.ambiencePoints} ambiente</span>
+                  <p className="text-xs text-cafe-500 mt-0.5">{deco.description}</p>
+                  <div className="flex items-center gap-3 mt-1 text-xs text-cafe-500">
+                    <span className="text-cafe-400">+{deco.ambiencePoints} ambiente</span>
                     {!isUnlocked && <span>Nivel {deco.unlockLevel}</span>}
                   </div>
                 </div>
@@ -109,15 +109,15 @@ export default function DecorationPanel() {
                     disabled={!canBuy}
                     className={`px-3 py-2 rounded-lg text-xs font-bold whitespace-nowrap transition-all ${
                       canBuy
-                        ? 'bg-amber-600 text-stone-950 hover:bg-amber-500 active:scale-95'
-                        : 'bg-stone-800 text-stone-600 cursor-not-allowed'
+                        ? 'bg-cafe-500 text-white hover:bg-cafe-600 active:scale-95'
+                        : 'bg-cafe-200 text-cafe-400 cursor-not-allowed'
                     }`}
                   >
                     {formatMoney(deco.cost)}
                   </button>
                 )}
                 {atMax && (
-                  <span className="text-[10px] text-stone-600">Max</span>
+                  <span className="text-[10px] text-cafe-400">Max</span>
                 )}
               </div>
             </div>

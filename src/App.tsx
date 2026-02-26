@@ -15,7 +15,7 @@ function GameShell() {
   const [activeTab, setActiveTab] = useState<TabId>('cafeteria');
 
   return (
-    <div className="h-screen flex flex-col bg-stone-950 text-stone-100 overflow-hidden">
+    <div className="h-screen flex flex-col bg-cafe-50 text-cafe-800 overflow-hidden">
       <TopHUD />
       <EventOverlay />
 
