@@ -18,7 +18,7 @@ const TABS: { id: TabId; label: string; icon: typeof Coffee }[] = [
 
 export default function BottomTabBar({ activeTab, onTabChange }: BottomTabBarProps) {
   return (
-    <div className="bg-cafe-800/95 backdrop-blur-md border-t border-cafe-700/50 safe-bottom">
+    <div className="bg-[#2a1814] backdrop-blur-md border-t border-[#3d2a1f] safe-bottom">
       <div className="flex items-center justify-around py-1.5">
         {TABS.map(tab => {
           const Icon = tab.icon;
@@ -29,12 +29,12 @@ export default function BottomTabBar({ activeTab, onTabChange }: BottomTabBarPro
               onClick={() => onTabChange(tab.id)}
               className={`flex flex-col items-center gap-0.5 px-2 py-1.5 rounded-xl transition-all duration-200 min-w-[48px] ${
                 isActive
-                  ? 'text-cafe-300 bg-cafe-300/15'
-                  : 'text-cafe-200/50 hover:text-cafe-200/80 active:bg-cafe-700/50'
+                  ? 'text-[#C8A951] bg-[#C8A951]/15'
+                  : 'text-[#F5EDE4]/50 hover:text-[#F5EDE4]/80 active:bg-[#3d2a1f]/50'
               }`}
             >
               <Icon size={18} strokeWidth={isActive ? 2.5 : 1.5} />
-              <span className={`text-[9px] font-medium ${isActive ? 'text-cafe-300' : ''}`}>
+              <span className={`text-[9px] font-medium ${isActive ? 'text-[#C8A951]' : ''}`}>
                 {tab.label}
               </span>
             </button>

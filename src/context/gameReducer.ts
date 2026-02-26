@@ -197,7 +197,7 @@ function processTick(state: GameState, now: number): GameState {
     floatingTexts.push({
       id: generateId(),
       text: `+R$${totalEarning.toFixed(0)}`,
-      color: '#C8A951',
+      color: '#2E7D32',
       x: 30 + Math.random() * 40,
       y: 20 + Math.random() * 30,
       createdAt: now,
