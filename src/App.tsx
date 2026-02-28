@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { GameProvider } from './context/GameContext';
+import { ToastProvider } from './components/shared/Toast';
 import TopHUD from './components/layout/TopHUD';
 import BottomTabBar, { type TabId } from './components/layout/BottomTabBar';
 import CafeteriaView from './components/cafeteria/CafeteriaView';
@@ -37,7 +38,9 @@ function GameShell() {
 function App() {
   return (
     <GameProvider>
-      <GameShell />
+      <ToastProvider>
+        <GameShell />
+      </ToastProvider>
     </GameProvider>
   );
 }

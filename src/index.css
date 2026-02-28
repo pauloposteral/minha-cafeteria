@@ -117,3 +117,126 @@
 .animate-gentle-bounce {
   animation: gentle-bounce 2s ease-in-out infinite;
 }
+
+@keyframes shimmer-bar {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes slide-in-left {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes flip-card {
+  0% { opacity: 0; transform: perspective(600px) rotateY(90deg) scale(0.8); }
+  50% { opacity: 1; transform: perspective(600px) rotateY(-10deg) scale(1.05); }
+  100% { opacity: 1; transform: perspective(600px) rotateY(0) scale(1); }
+}
+
+@keyframes level-up-burst {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.1); }
+  70% { transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(200, 169, 81, 0.3); }
+  50% { border-color: rgba(200, 169, 81, 0.8); }
+}
+
+@keyframes glow-gold {
+  0%, 100% { box-shadow: 0 0 8px rgba(200, 169, 81, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(200, 169, 81, 0.5); }
+}
+
+@keyframes toast-in {
+  0% { opacity: 0; transform: translateY(-100%) scale(0.9); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes tab-underline {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+@keyframes steam {
+  0% { opacity: 0.6; transform: translateY(0) scaleX(1); }
+  50% { opacity: 0.3; transform: translateY(-8px) scaleX(1.2); }
+  100% { opacity: 0; transform: translateY(-16px) scaleX(0.8); }
+}
+
+@keyframes badge-pop {
+  0% { opacity: 0; transform: scale(0); }
+  60% { transform: scale(1.3); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes money-shimmer {
+  0% { color: #2E7D32; }
+  50% { color: #66BB6A; }
+  100% { color: #2E7D32; }
+}
+
+@keyframes dawn-reveal {
+  0% { opacity: 0; filter: brightness(0.3); }
+  100% { opacity: 1; filter: brightness(1); }
+}
+
+.animate-slide-in-left { animation: slide-in-left 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-flip-card { animation: flip-card 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-level-up { animation: level-up-burst 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-pulse-border { animation: pulse-border 2s ease-in-out infinite; }
+.animate-glow-gold { animation: glow-gold 2s ease-in-out infinite; }
+.animate-toast-in { animation: toast-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-tab-underline { animation: tab-underline 0.3s ease-out forwards; }
+.animate-steam { animation: steam 2s ease-out infinite; }
+.animate-badge-pop { animation: badge-pop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-money-shimmer { animation: money-shimmer 1s ease-in-out; }
+.animate-dawn { animation: dawn-reveal 1.5s ease-out forwards; }
+
+.animate-shimmer-bar {
+  position: relative;
+  overflow: hidden;
+}
+.animate-shimmer-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer-bar 2s ease-in-out infinite;
+}
+
+.header-texture {
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(200, 169, 81, 0.06) 0%, transparent 50%),
+    linear-gradient(180deg, #2a1814 0%, #1f120e 100%);
+}
+
+.wood-pattern {
+  background-image:
+    repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(139,69,19,0.03) 30px, rgba(139,69,19,0.03) 31px),
+    repeating-linear-gradient(0deg, transparent, transparent 15px, rgba(139,69,19,0.02) 15px, rgba(139,69,19,0.02) 16px);
+}
+
+.cafe-bg-pattern {
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(212,165,116,0.06) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(200,169,81,0.04) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(139,69,19,0.02) 0%, transparent 60%);
+}
+
+.img-cover { object-fit: cover; object-position: center; }
+
+.category-espresso { background: linear-gradient(135deg, #FEF3C7 0%, #FFFBEB 100%); }
+.category-leite { background: linear-gradient(135deg, #F5F5F4 0%, #FAFAF9 100%); }
+.category-gelados { background: linear-gradient(135deg, #ECFEFF 0%, #F0FDFA 100%); }
+.category-specialty { background: linear-gradient(135deg, #FEFCE8 0%, #FEF9C3 100%); }
+
+.tier-stripe-1 { border-left: 3px solid #B45309; }
+.tier-stripe-2 { border-left: 3px solid #64748B; }
+.tier-stripe-3 { border-left: 3px solid #CA8A04; }
+.tier-stripe-4 { border-left: 3px solid #0284C7; }
+.tier-stripe-5 { border-left: 3px solid #06B6D4; }
